@@ -228,22 +228,14 @@ function buildHeroBlock(main) {
   const video = document.createElement('div');
   const anchor = main.querySelector('a');
 
-  if (!picture && main.querySelector('h1')) {
-    main.querySelector('p > a').remove();
-    addVideo(video, anchor.href);
-    main.prepend(video.querySelector('video'));
-  }
+  
   // eslint-disable-next-line no-bitwise
   if (content && picture && (content.compareDocumentPosition(picture)
     & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
     section.append(buildBlock('hero', { elems: [picture, content] }));
     main.prepend(section);
-  } else if (content && video) {
-    const section = document.createElement('div');
-    section.append(buildBlock('hero', { elems: [main.querySelector('video'), content] }));
-    main.prepend(section);
-  }
+  } 
 }
 
 /**
