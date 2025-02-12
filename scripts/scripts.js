@@ -2,6 +2,7 @@
 import { events } from '@dropins/tools/event-bus.js';
 import {
   sampleRUM,
+  buildBlock,
   loadHeader,
   loadFooter,
   decorateButtons,
