@@ -199,12 +199,49 @@ function autolinkModals(element) {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
-    // TODO: add auto block, if needed
+    buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
+  }
+}
+
+function buildHeroBlock(main) {
+  if (getMetadata('autoblock') === 'false') return;
+  const h1 = main.querySelector('h1');
+  const content = document.createElement('div');
+  content.classList.add('hero-content');
+  if (h1) content.append(h1);
+
+  const h2 = main.querySelector('h2');
+  if (h2) {
+    const seperator = document.createElement('span');
+    seperator.classList.add('seperator');
+    content.append(seperator);
+    content.append(h2);
+  }
+
+  const picture = main.querySelector('picture');
+  const video = document.createElement('div');
+  const anchor = main.querySelector('a');
+
+  if (!picture && main.querySelector('h1')) {
+    main.querySelector('p > a').remove();
+    addVideo(video, anchor.href);
+    main.prepend(video.querySelector('video'));
+  }
+  // eslint-disable-next-line no-bitwise
+  if (content && picture && (content.compareDocumentPosition(picture)
+    & Node.DOCUMENT_POSITION_PRECEDING)) {
+    const section = document.createElement('div');
+    section.append(buildBlock('hero', { elems: [picture, content] }));
+    main.prepend(section);
+  } else if (content && video) {
+    const section = document.createElement('div');
+    section.append(buildBlock('hero', { elems: [main.querySelector('video'), content] }));
+    main.prepend(section);
   }
 }
 
