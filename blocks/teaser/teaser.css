@@ -1,6 +1,6 @@
 .teaser {
   display: flex;
-  background: #000;
+  background: #0a2d4b;
   align-items: stretch;
   max-height: 240px;
   border-radius: var(--border-radius);
