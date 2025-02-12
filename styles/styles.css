@@ -912,3 +912,32 @@ main .section.author .content-wrapper p:nth-child(2) {
 .dropin-design .dropin-cart-item__sku {
   display: none;
 }
+
+
+
+
+
+
+.lavazza .block.hero h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    padding: 0 15%;
+}
+
+.lavazza .block.hero h1 {
+    letter-spacing: -.10687rem;
+    font-size: 6rem;
+    line-height: 6.5rem;
+}
+
+.lavazza .columns.block :is(h3), main .default-content-wrapper > :is(h3) {
+	font-size: 1.475rem;
+    font-weight: bold;
+}
+
+.lavazza .columns.block p:not(:has(:is(a.button , picture))), main .default-content-wrapper p:not(:has(:is(a.button , picture))) {
+    font-size: 2.4rem;
+    /* font-size: 1.5rem; */
+    letter-spacing: 0;
+    line-height: 4rem;
+}
