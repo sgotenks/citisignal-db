@@ -171,6 +171,7 @@ main .hero-container > div {
     display: block;
     background: inherit;
     box-sizing: content-box;
+    z-index: auto;
 }
 
 .lavazza .block.hero:not(.wireless) picture {
