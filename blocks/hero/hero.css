@@ -154,7 +154,7 @@ main .hero-container > div {
 
 
 
-.lavazza main .hero-container { {
+.lavazza main .hero-container {
     padding: 0;
     background: transparent;
 }
@@ -163,7 +163,7 @@ main .hero-container > div {
     max-width: unset;
 }
 
-.lavazza .block.hero { {
+.lavazza .block.hero {
     position: relative;
     padding: 32px;
     min-height: 300px;
@@ -173,7 +173,7 @@ main .hero-container > div {
     box-sizing: content-box;
 }
 
-.lavazza .block.hero:not(.wireless) picture { {
+.lavazza .block.hero:not(.wireless) picture {
     position: absolute;
     position: fixed;
     z-index: -100;
@@ -187,7 +187,7 @@ main .hero-container > div {
     height: auto;
 }
 
-.lavazza .block.hero img { {
+.lavazza .block.hero img {
     object-fit: cover;
     width: 100%;
     height: 100%;
