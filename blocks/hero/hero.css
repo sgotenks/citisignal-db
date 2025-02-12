@@ -28,7 +28,7 @@ main .hero-container > div {
 }
 
 .block.hero.medium {
-  min-height: 300px;
+  min-height: 384px;
   padding: 1.5rem 10rem;
 }
 
