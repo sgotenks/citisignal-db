@@ -41,7 +41,7 @@ function buildConfigURL(environment) {
     const configURL = new URL(`${window.location.origin}/${fileName}`);
   }
   else{
-    const configURL = new URL(`${window.location.ancestorOrigins[0]}/${fileName}`);
+    const configURL = new URL(window.location.ancestorOrigins[0] + '/' + fileName);
   }
   return configURL;  
 } 
