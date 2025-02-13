@@ -33,13 +33,16 @@ export const calcEnvironment = () => {
 function buildConfigURL(environment) {
   const env = environment || calcEnvironment();
   let fileName = 'configs.json';
-  if (aemxwalk === 'false'){
-    fileName = 'configs.json?sheet=prod';
-  }
+  fileName = 'configs.json?sheet=prod';
   if (env !== 'prod') {
     fileName = `configs-${env}.json`;
   }
-  const configURL = new URL(`${window.location.origin}/${fileName}`);
+  if(window.location.origin){
+    const configURL = new URL(`${window.location.origin}/${fileName}`);
+  }
+  else{
+    const configURL = new URL(`${window.location.ancestorOrigins[0]}/${fileName}`);
+  }
   return configURL;  
 } 
 
